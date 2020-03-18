@@ -15,6 +15,7 @@ password.onblur=function(){
     checkpwd(password,passwordc);
 }
 phonenum.onblur=function(){
+    checkspace(phonenum,phonec)
     checkphone(phonenum,phonec);
 }
 checknum.onblur=function(){ 
@@ -82,6 +83,9 @@ register.onclick=function(){
         alert('注册成功')
     }
     else{
+        checkname(username,usernamec);
+        checkpwd(password,passwordc);
+        checkphone(phonenum,phonec);
         alert('表单填写不正确，请检查')
     }
 }
