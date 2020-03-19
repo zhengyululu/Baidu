@@ -24,15 +24,14 @@ checknum.onblur=function(){
 //表单验证
 // 用户名验证
 function checkname(field,msg){
-    var regMobile=/^[A-Za-z0-9_-]*[A-Za-z_-][A-Za-z0-9_-]*$/;
-    var regMobile1=/^(?!\d+$)[a-zA-Z0-9-_]+$/;
+    var regMobile1=/^[A-Za-z0-9\u4e00-\u9fa5]+/
     var name=field.value;
-    if(regMobile.test(name)&&regMobile1.test(name)){
+    if(regMobile1.test(name)){
         msg.innerHTML="";
         return true;
     }
     else{
-        msg.innerHTML="<p style='font-size:5px;color: red;margin-left:70px;'>"+"用户名仅支持中英文、数字和下划线，且不能为纯数字"+"</p>";
+        msg.innerHTML="<p style='font-size:5px;color: red;margin-left:70px;'>"+"用户名仅支持中英文、数字和下划线"+"</p>";
         return false;
     } 
 }
